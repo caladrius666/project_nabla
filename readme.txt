@@ -22,7 +22,7 @@ c x 1 2 3 4 6
 
 ###Variety of forms(for form option):
 ##Consist of <color><form>
-##Colors:
+#Colors:
 'b'  	blue
 'g' 	green
 'r' 	red
@@ -31,7 +31,7 @@ c x 1 2 3 4 6
 'y' 	yellow
 'k' 	black
 'w' 	white
-##Forms:
+#Forms:
 '-' 	solid line style
 '--' 	dashed line style
 '-.' 	dash-dot line style
