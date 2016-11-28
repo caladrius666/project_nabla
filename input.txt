@@ -1,4 +1,4 @@
-c x 1 2 3 4 5 form rd err 0.2 0.3 0.4 0.1 0.3 ap 1
+c x 1 2 3 4 5 form rd err 0.2 0.3 0.4 0.1 0.1 ap 1
 c y 2 4 4 6 7 err 0.1
 a x 1 2 3 4 5 form rd err 0.2 0.3 0.4 0.1 0.3 ap 1 Δ 1
 a y 2 4 4 6 7 err 0.1
