@@ -57,7 +57,11 @@ def do_dirty_hack(c_plot, need_podgon):
 
 def do_hide_podgon(c_plot):
     y = create_float_list(c_plot[1], c_plot[1][1])
-    yraz = (max(y) - min(y))/250
+    if 'brutality' in c_plot[0]:
+        brute = float(c_plot[0][c_plot[0].index('brutality') + 1])
+    else:
+        brute = 250
+    yraz = (max(y) - min(y))/brute
     for i in range(len(y)):
         c_plot[1][i+2] += yraz*random.randint(-5, 5)
 

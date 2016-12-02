@@ -13,6 +13,8 @@ ap <degree>                    (approximation degree)
 err <err1, err2, ... ,errx>    (errors)
 ∇ <mes1, mes2>                 (nabla-podgon: gives right answer, according to the two trusty measurements)
 Δ <desired_quotient>           (delta-podgon: gives right answer, if desired quotient is known)
+brutality                      (defines podgonian accuracy(use, when measurements are good,
+                                but require a little podgon), default number is 250)
 
 ###Input file example:
 a x 1 2 3 4 5 form rd cp err 0.1
