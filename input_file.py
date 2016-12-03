@@ -9,6 +9,11 @@ def create_input(path):
 def open_file(path):
     input = open(path, 'r', encoding='utf-8')
     lines = input.readlines()
+    lines_ = []
+    for i in range(len(lines)):
+        if lines[i] != '\n':
+            lines_.append(lines[i])
+    lines = lines_
     for i in range(len(lines)):
         lines[i] = lines[i].rstrip()
         lines[i] = list(map(str, lines[i].split()))
