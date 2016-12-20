@@ -60,13 +60,16 @@ def do_hide_podgon(c_plot):
     if 'brutality' in c_plot[0]:
         brute = float(c_plot[0][c_plot[0].index('brutality') + 1])
     else:
-        brute = 250
+        brute = 100
     yraz = (max(y) - min(y))/brute
     for i in range(len(y)):
-        c_plot[1][i+2] += yraz*random.randint(-5, 5)
+        c_plot[1][i+2] = random.gauss(c_plot[1][i+2], yraz)
 
 def do_show_podgon(c_plot):
     x = create_float_list(c_plot[0], c_plot[0][1])
     y = create_float_list(c_plot[1], c_plot[1][1])
-    print(x)
-    print(y)
+    print('Результаты подгона (фальсифицированные данные):')
+    print(c_plot[0][1], *x)
+    print(c_plot[1][1], *y)
+
+
