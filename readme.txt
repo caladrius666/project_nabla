@@ -11,17 +11,17 @@ cp                             (connects points on the graph)
 form <form>                    (defines appearance of the points)
 ap <degree>                    (approximation degree)
 err <err1, err2, ... ,errx>    (errors)
-∇ <mes1, mes2>                 (nabla-podgon: gives right answer, according to the two trusty measurements)
-Δ <desired_quotient>           (delta-podgon: gives right answer, if desired quotient is known)
+nabla <mes1, mes2>             (nabla-podgon: gives right answer, according to the two trusty measurements)
+delta <desired_quotient>       (delta-podgon: gives right answer, if desired quotient is known)
 brutality                      (defines podgonian accuracy(use, when measurements are good,
                                 but require a little podgon), default number is 100)
 
 ###Input file example:
 a x 1 2 3 4 5 form rd cp err 0.1
 a y 1 2 3 4 6
-b x 1 2 3 4 5 ap 1 form rd Δ 1 err 0.1 0.2 0.3 0.4 0.5
+b x 1 2 3 4 5 ap 1 form rd delta 1 err 0.1 0.2 0.3 0.4 0.5
 b x 1 2 3 4 6
-c x 1 2 3 4 5 ap 1 form rd ∇ 2 3
+c x 1 2 3 4 5 ap 1 form rd nabla 2 3
 c x 1 2 3 4 6
 
 ###Variety of forms(for form option):
