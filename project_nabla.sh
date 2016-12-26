@@ -2,7 +2,7 @@
 for input in $1 $2 $3 $4
 do
 flag=no
-for option in -ax -hg -sp -sa --show_approx --axis --hide_grid --show_podgon
+for option in -ax -hg -sp -sa -ro --show_approx --axis --hide_grid --show_podgon --round_off
 do
 if [ "$option" = "$input" ]
 then

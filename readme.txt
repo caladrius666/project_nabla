@@ -5,6 +5,7 @@
 -ax --axis                     (smooth axes)
 -hg --hide_grid                (don't show grid)
 -sp --show_podgon              (shows podgonian results)
+-ro --round_off                (disables rounding podgonian results)
 
 ###Input file options:
 cp                             (connects points on the graph)
