@@ -21,7 +21,5 @@ echo Что вы задумали?
 exit
 fi
 echo project_nabla активирован!!!
-python3 <project_nabla path>/main.py <path to input> $1 $2 $3 $4
+python3 /home/stanislav/PycharmProjects/project_nabla/main.py /home/stanislav/Рабочий\ стол/project_nabla.txt $1 $2 $3 $4
 echo Готово!
-
-

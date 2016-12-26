@@ -4,17 +4,7 @@ from podgonian import *
 from terminal_parameters import *
 import matplotlib.pyplot as plt
 import numpy as np
-
-def create_float_list(list, key):
-    ind = list.index(key) + 1
-    L = []
-    while ind != len(list):
-        if type(list[ind]) == float:
-            L.append(list[ind])
-            ind += 1
-        else:
-            break
-    return L
+from meta import *
 
 def plot_show(plot):
     for i in range(len(plot)):
@@ -38,8 +28,7 @@ def plot_make(c_plot):
     do_utilities(c_plot)
 
 def do_errors(c_plot):
-    x = create_float_list(c_plot[0], c_plot[0][1])
-    y = create_float_list(c_plot[1], c_plot[1][1])
+    x, y = get_xy(c_plot)
     if 'err' in c_plot[0]:
         errx = create_float_list(c_plot[0], 'err')
         if len(errx) == 1:
@@ -61,8 +50,7 @@ def do_errors(c_plot):
 
 def do_approx(c_plot):
     if 'ap' in c_plot[0]:
-        x = create_float_list(c_plot[0], c_plot[0][1])
-        y = create_float_list(c_plot[1], c_plot[1][1])
+        x, y = get_xy(c_plot)
         pos = c_plot[0].index('ap') + 1
         degree = int(c_plot[0][pos])
         xraz = (abs(max(x)-min(x)))/15
@@ -73,6 +61,7 @@ def do_approx(c_plot):
             print('Уравнение', np.poly1d(np.polyfit(x, y, degree)))
             print('a=', np.polyfit(x, y, degree, cov = True)[0][0], 'b=', np.polyfit(x, y, degree, cov = True)[0][1])
             print('Δa=', np.polyfit(x, y, degree, cov = True)[1][0][0])
+            print()
 
 def do_labels(c_plot):
     plt.xlabel(str(c_plot[0][1]))
@@ -84,8 +73,7 @@ def do_utilities(c_plot):
         plt.grid(True)
 
 def get_axis_parameters(c_plot):
-    x = create_float_list(c_plot[0], c_plot[0][1])
-    y = create_float_list(c_plot[1], c_plot[1][1])
+    x, y = get_xy(c_plot)
     dx = abs(min(x)-max(x))/15
     dy = abs(min(y)-max(y))/15
     xmax = max(x) + dx
@@ -112,8 +100,7 @@ def do_axis(c_plot, ax):
     return ax
 
 def do_form(c_plot):
-    x = create_float_list(c_plot[0], c_plot[0][1])
-    y = create_float_list(c_plot[1], c_plot[1][1])
+    x, y = get_xy(c_plot)
     if 'form' in c_plot[0]:
         pos = c_plot[0].index('form') + 1
         form = c_plot[0][pos]
@@ -121,16 +108,15 @@ def do_form(c_plot):
             plt.plot(x[i], y[i], form)
 
 def do_connect_points(c_plot):
-    x = create_float_list(c_plot[0], c_plot[0][1])
-    y = create_float_list(c_plot[1], c_plot[1][1])
+    x, y = get_xy(c_plot)
     if 'cp' in c_plot[0]:
         plt.plot(x, y)
 
 def do_podgon(c_plot):
-    if '∇' in c_plot[0]:
-        pos1 = c_plot[0].index('∇') + 1
-        pos2 = c_plot[0].index('∇') + 2
+    if 'nabla' in c_plot[0]:
+        pos1 = c_plot[0].index('nabla') + 1
+        pos2 = c_plot[0].index('nabla') + 2
         nabla_podgon(c_plot, float(c_plot[0][pos1]), float(c_plot[0][pos2]))
-    elif 'Δ' in c_plot[0]:
-        pos = c_plot[0].index('Δ') + 1
+    elif 'delta' in c_plot[0]:
+        pos = c_plot[0].index('delta') + 1
         delta_podgon(c_plot, float(c_plot[0][pos]))
