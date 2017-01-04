@@ -19,6 +19,9 @@ def plot_show(plot):
         plt.show()
 
 def plot_make(c_plot):
+    print('Входные данные для '+str(c_plot[0][0])+':')
+    print(*get_xy(c_plot)[0])
+    print(*get_xy(c_plot)[1])
     do_podgon(c_plot)
     do_errors(c_plot)
     do_form(c_plot)
