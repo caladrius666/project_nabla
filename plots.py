@@ -67,9 +67,9 @@ def do_approx(c_plot):
             print()
 
 def do_labels(c_plot):
-    plt.xlabel(str(c_plot[0][1]))
-    plt.ylabel(str(c_plot[1][1]))
-    plt.title(str(c_plot[0][0]))
+    plt.xlabel('$' + str(c_plot[0][1]) + '$')
+    plt.ylabel('$' + str(c_plot[1][1]) + '$')
+    plt.title('$' + str(c_plot[0][0]) + '$')
 
 def do_utilities(c_plot):
     if not(args.hide_grid):
